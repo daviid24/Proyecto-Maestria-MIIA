@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.venv
+venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Data/Models (mantén fuera lo pesado/privado)
+data/*
+!data/.gitkeep
+models/*
+!models/.gitkeep
+
+# VSCode/IDE
+.vscode/
+.idea/
