@@ -17,8 +17,11 @@ ENV/
 # Data/Models (mantén fuera lo pesado/privado)
 data/*
 !data/.gitkeep
+!data/*.xlsx
+
 models/*
 !models/.gitkeep
+
 
 # VSCode/IDE
 .vscode/
