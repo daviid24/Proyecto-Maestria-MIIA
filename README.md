@@ -19,55 +19,38 @@ El proyecto aborda los siguientes componentes:
 
 El proyecto está basado en los hallazgos y metodología del documento técnico adjunto: “Modelos RFM y Conformal Prediction para la predicción temprana de clientes de alto valor”.
 
----
-
-## 2. Estructura del Proyecto (Scaffolding)
-
-La estructura del repositorio propuesta:
 Proyecto-Maestria-MIIA/
 │
 ├── data/
-│   ├── raw/                 # Datos originales
-│   ├── processed/           # Datos transformados y listos para modelado
-│   └── dictionaries/        # Diccionarios de variables y metadatos
+│   ├── raw/                 # Datos originales exportados del e-commerce
+│   ├── processed/           # Datos limpios, transformados y finales
 │
 ├── notebooks/
-│   ├── 01_eda.ipynb         # Exploración de datos
-│   ├── 02_rfm_engineering.ipynb
-│   ├── 03_clustering_kmeans.ipynb
-│   ├── 04_clustering_fcm.ipynb
-│   ├── 05_visualizaciones_pca.ipynb
-│   ├── 06_modelos_supervisados.ipynb
-│   └── 07_conformal_prediction.ipynb
+│   ├── 01_EDA.ipynb         # Análisis exploratorio de datos
+│   ├── 02_RFM.ipynb         # Construcción de variables RFM
+│   ├── 03_Clustering.ipynb  # K-Means y Fuzzy C-Means
+│   ├── 04_Clasificacion.ipynb 
+│   ├── 05_Conformal.ipynb
 │
 ├── src/
-│   ├── data/
-│   │   └── preprocessing.py          # Limpieza, normalización y codificación
-│   ├── features/
-│   │   └── rfm.py                    # Cálculo de variables RFM
-│   ├── clustering/
-│   │   ├── kmeans_model.py
-│   │   └── fcm_model.py
-│   ├── modeling/
-│   │   ├── decision_tree.py
-│   │   ├── mlp_model.py
-│   │   └── xgboost_model.py
-│   ├── conformal/
-│   │   └── conformal_prediction.py
-│   └── utils/
-│       ├── visualizations.py
-│       └── metrics.py
+│   ├── preprocessing.py     # Limpieza, codificación y transformación de datos
+│   ├── rfm.py               # Cálculo de Recency, Frequency y Monetary Value
+│   ├── clustering.py        # Implementación de K-Means y Fuzzy C-Means
+│   ├── classification.py    # Entrenamiento de modelos supervisados
+│   ├── conformal.py         # Capa de Conformal Prediction
+│   ├── utils.py             # Funciones auxiliares
 │
-├── outputs/
-│   ├── figures/              # Gráficos de clusterización, PCA y resultados
-│   ├── models/               # Modelos entrenados
-│   └── predictions/          # Archivos de predicciones y prediction sets
+├── models/
+│   ├── xgboost_model.json   # Modelo final entrenado
+│   ├── scalers/             # Scalers y objetos de transformación
+│   ├── clusters/            # Resultados de clusterización
 │
-├── README.md                 # Archivo leído por GitHub (versión generada)
-├── requirements.txt          # Dependencias del proyecto
-└── .gitignore
-
----
+├── results/
+│   ├── figures/             # Visualizaciones, PCA, silueta, etc.
+│   ├── metrics/             # Reportes de evaluación
+│
+├── requirements.txt         # Dependencias del proyecto
+├── README.md                # Este archivo
 
 ## 3. Cómo Ejecutar el Proyecto
 
