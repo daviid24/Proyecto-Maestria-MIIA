@@ -2,8 +2,6 @@
 
 Este proyecto implementa un pipeline completo de analítica avanzada para segmentar clientes de un e-commerce y predecir desde su primera compra a qué tipo de cliente se convertirán, integrando metodologías de RFM, clustering, modelos supervisados y Conformal Prediction.
 
-El objetivo es proporcionar a las áreas de marketing y CRM una herramienta accionable para priorizar inversiones en fidelización y mejorar la asignación de recursos.
-
 ---
 
 ## 1. Descripción General del Proyecto
@@ -16,9 +14,6 @@ El proyecto aborda los siguientes componentes:
 - Evaluación de Árboles de Decisión, Redes Neuronales y XGBoost.
 - Implementación de Conformal Prediction para obtener conjuntos de predicción con garantías estadísticas.
 - Construcción de un pipeline reproducible de análisis, entrenamiento y predicción.
-
-El proyecto está basado en los hallazgos y metodología del documento técnico adjunto: “Modelos RFM y Conformal Prediction para la predicción temprana de clientes de alto valor”.
-
 ---
 
 ## 2. Estructura del Proyecto
@@ -69,17 +64,6 @@ Instalar dependencias:
 ```
 pip install -r requirements.txt
 ```
-
-Las principales librerías utilizadas incluyen:
-
-- pandas
-- numpy
-- scikit-learn
-- xgboost
-- fcmeans
-- matplotlib / seaborn
-- joblib
-- tqdm
 
 ---
 
@@ -177,43 +161,3 @@ prediction_sets.to_csv("outputs/predictions/prediction_sets.csv", index=False)
   - Ocasionales antiguos
 
 Esto permite priorizar presupuestos de marketing y mejorar retorno de inversión.
-
----
-
-## 5. Cómo Interpretar la Salida Final
-
-La salida final del sistema incluye:
-
-- Segmento asignado por XGBoost
-- Conjunto de posibles segmentos por Conformal Prediction
-- Probabilidades por clase
-- Nivel de incertidumbre del cliente
-
-Ejemplo:
-
-| Cliente | Predicción ML           | Prediction Set (90%) |
-|---------|--------------------------|-----------------------|
-| 12345   | Nuevo ticket alto        | {0,1,4,5}            |
-| 67890   | Dormido bajo valor       | {1,3,5,6}            |
-
----
-
-## 6. Trabajo Futuro
-- Integrar modelos basados en secuencias (RNN/Transformers) cuando haya más historia.
-- Incorporar datos de navegación web.
-- Construir un dashboard interactivo para uso del área de marketing.
-- Implementar explainability (SHAP) en predicciones individuales.
-- Automatizar pipeline con Airflow o Prefect.
-
----
-
-## 7. Referencia al Documento Técnico
-La implementación corresponde íntegramente al documento técnico adjunto:  
-**Modelos RFM y Conformal Prediction para la predicción temprana de clientes de alto valor**, utilizado como base conceptual y metodológica.
-
----
-
-## 8. Contacto
-Creado por José David Medina Lara  
-Universidad de los Andes – Maestría en Inteligencia Analítica  
-Correo: j.medinal@uniandes.edu.co
